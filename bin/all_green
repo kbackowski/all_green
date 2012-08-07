@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'all_green'
+exit AllGreen::CommandLine.new.run
