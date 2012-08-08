@@ -8,7 +8,7 @@ module AllGreen
 		end
 
 		def run
-			@engines.each(&:run)
+			@engines.map(&:run).all?(&:zero?)
 		end
 
 		private

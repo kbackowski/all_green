@@ -1,8 +1,8 @@
 module AllGreen::Engines
-	class RSpecEngine
+	class SpinachEngine
 		def self.load
 			begin
-				require 'rspec'
+				require 'spinach'
 			rescue LoadError
 				return false
 			end
@@ -10,7 +10,9 @@ module AllGreen::Engines
 		end
 
 		def self.run
-			RSpec::Core::Runner.run ['spec']
+			cli = Spinach::Cli.new
+			cli.init_reporter
+			cli.run ? 0 : 1
 		end
 	end
 end
