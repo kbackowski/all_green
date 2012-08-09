@@ -1,6 +1,13 @@
 # AllGreen
 
-TODO: Write a gem description
+Run all your test suites (rspec, cucumber, rails unit tests and more...) using one command. 
+
+AllGreen will handle exit codes so it's perfect for using with continuous integration system.
+
+Currently AllGreen will auto-detect :
+
+* RSpec
+* Spinach
 
 ## Installation
 
@@ -18,7 +25,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run all tests
+
+    $ bundle exec all_green
+
+## Roadmap
+
+* Add support for popular testing frameworks : Cucumber, MiniTest, Rails unit test
+* Pass configuration options for each engine
+* Set tests order 
 
 ## Contributing
 
