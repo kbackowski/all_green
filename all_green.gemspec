@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["kbackowski@gmail.com"]
   gem.description   = %q{Run all your test suites (rspec, cucumber, rails unit tests and more...) using one command}
   gem.summary       = %q{Run all your test suites (rspec, cucumber, rails unit tests and more...) using one command}
-  gem.homepage      = ""
+  gem.homepage      = 'http://github.com/kbackowski/all_green'
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
