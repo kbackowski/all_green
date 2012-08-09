@@ -1,15 +1,10 @@
 module AllGreen::Engines
-	class RSpecEngine
-		def self.load
-			begin
-				require 'rspec'
-			rescue LoadError
-				return false
-			end
-			true
+	class RSpecEngine < AllGreen::BaseEngine
+		def self.load_gem
+			require 'rspec'
 		end
 
-		def self.run
+		def self.run_gem
 			RSpec::Core::Runner.run ['spec']
 		end
 	end

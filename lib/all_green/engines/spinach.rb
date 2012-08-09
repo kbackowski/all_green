@@ -1,18 +1,13 @@
 module AllGreen::Engines
-	class SpinachEngine
-		def self.load
-			begin
-				require 'spinach'
-			rescue LoadError
-				return false
-			end
-			true
+	class SpinachEngine < AllGreen::BaseEngine
+		def self.load_gem
+			require 'spinach'
 		end
 
-		def self.run
+		def self.run_gem
 			cli = Spinach::Cli.new
 			cli.init_reporter
-			cli.run ? 0 : 1
+			cli.run
 		end
 	end
 end
