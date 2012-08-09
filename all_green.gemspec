@@ -4,8 +4,8 @@ require File.expand_path('../lib/all_green/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["kbackowski"]
   gem.email         = ["kbackowski@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Run all your test suites (rspec, cucumber, rails unit tests and more...) using one command}
+  gem.summary       = %q{Run all your test suites (rspec, cucumber, rails unit tests and more...) using one command}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
