@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "all_green"
   gem.require_paths = ["lib"]
   gem.version       = AllGreen::VERSION
+
+  gem.add_runtime_dependency 'colorize'
 end

@@ -1,6 +1,8 @@
 require 'spec_helper'
 
-class TestEngine < AllGreen::BaseEngine; end
+class TestEngine < AllGreen::BaseEngine
+  @engine_name = :test_engine
+end
 
 describe AllGreen::BaseEngine do
   describe '.load' do

@@ -1,5 +1,8 @@
 module AllGreen::Engines
   class RailsEngine < AllGreen::BaseEngine
+		@engine_name = :rails_tests
+    @engine_human_name = 'Rails Tests'
+
     def self.load_gem
       require 'rails'
       require 'rake/testtask'

@@ -1,7 +1,12 @@
 require 'spec_helper'
 
-class TestEngine1 < AllGreen::BaseEngine; end
-class TestEngine2 < AllGreen::BaseEngine; end
+class TestEngine1 < AllGreen::BaseEngine
+  @engine_name = :test_engine1
+end
+
+class TestEngine2 < AllGreen::BaseEngine
+  @engine_name = :test_engine2
+end
 
 describe AllGreen::Runner do
 	describe '#run' do

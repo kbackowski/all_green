@@ -1,3 +1,4 @@
+require 'colorize'
 require 'all_green/version'
 require 'all_green/base_engine'
 require 'all_green/command_line'
