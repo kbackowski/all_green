@@ -6,8 +6,10 @@ AllGreen will handle exit codes so it's perfect for using with continuous integr
 
 Currently AllGreen will auto-detect :
 
-* RSpec
-* Spinach
+* [RSpec](https://github.com/dchelimsky/rspec)
+* [Rails tests](https://github.com/rails/rails)
+* [Cucumber](https://github.com/cucumber/cucumber)
+* [Spinach](https://github.com/codegram/spinach)
 
 ## Installation
 
@@ -31,7 +33,6 @@ Run all tests
 
 ## Roadmap
 
-* Add support for popular testing frameworks : Cucumber, MiniTest, Rails unit test
 * Pass configuration options for each engine
 * Set tests order 
 
