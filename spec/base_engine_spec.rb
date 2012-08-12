@@ -23,6 +23,10 @@ describe AllGreen::BaseEngine do
   end
 
   describe '.run' do
+    before do
+      AllGreen::BaseEngine.stub(:log)
+    end
+
     it 'should invoke .run_gem' do
       TestEngine.should_receive(:run_gem)
       TestEngine.run

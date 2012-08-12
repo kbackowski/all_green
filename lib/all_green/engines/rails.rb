@@ -10,6 +10,8 @@ module AllGreen::Engines
     end
 
     def self.run_gem
+      errors = []
+
     	Rails::SubTestTask.new(:units) do |t|
     		t.libs << 'test'
 		    t.pattern = 'test/unit/**/*_test.rb'
@@ -25,9 +27,19 @@ module AllGreen::Engines
 		    t.pattern = 'test/integration/**/*_test.rb'
     	end
 
-    	Rake::Task[:units].invoke
-    	Rake::Task[:functionals].invoke
-    	Rake::Task[:integration].invoke
+      %w(units functionals integration).each do |task|
+        begin
+          Rake::Task[task].invoke
+          rescue => e
+            errors << { :task => task, :exception => e }
+        end
+      end
+
+      if errors.any?
+        log errors.map { |e| "Errors running test:#{e[:task]}! #{e[:exception].inspect}" }.join("\n")
+        return false
+      end
+      true
     end
   end
 end
