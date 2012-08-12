@@ -2,9 +2,13 @@ require 'rspec'
 
 module AllGreen
 	class Runner
-		def initialize
+		def initialize(options = {})
+			@options = options
+			@options[:order] ||= [:rspec, :rails_tests, :cucumber, :spinach]
+
 			@engines = []
 			load_engines
+			sort_engines
 		end
 
 		def run
@@ -21,6 +25,10 @@ module AllGreen
 
 		def load_engine(engine)
 			@engines << engine if engine.load
+		end
+
+		def sort_engines
+			@engines.sort_by! { |e| @options[:order].index(e.engine_name) || 99 }
 		end
 	end
 end
